@@ -41,7 +41,8 @@ cd /opt/vim/
 # Remove our firstboot service so that it won't run again
 update-rc.d firstboot remove
 
-sleep 5
+# install KDE plasma
+aptitude install ~t^desktop$ ~t^kde-desktop$
 
 # Reboot into the updated system
 /sbin/reboot
