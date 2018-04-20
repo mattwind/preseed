@@ -8,22 +8,24 @@ Fully automatic unattended linux install can be used to speed up the process and
 
 Change the hash in the preseed.cfg with the generated one
 
-### Kernel boot parameter
+### Boot Options
 
 You can use any of the Debian mini or netboot iso images.
 
-#### Option 1 
+#### Method 1 - boot parameter
 
 Hit tab on boot up and pass the following parameters.
 
 `append auto preseed/url=https://raw.githubusercontent.com/mattwind/preseed/master/preseed.cfg keyboard-configuration/xkb-keymap=us priority=critical locale=en_US`
 
-#### Option 2 
+#### Method 2 - custom iso
 
-Modify the iso and edit the linux boot command.
-
-On linux the easiest method is to install `isomaster`
+First download the Debian installation ISO.
 
 `wget http://ftp.debian.org/debian/dists/stable/main/installer-amd64/current/images/netboot/mini.iso`
 
-Launch isomaster and just copy the `txt.cfg` file to the root directory of the iso.
+On linux the easiest way to edit the ISO by using isomaster.
+
+`apt install isomaster`
+
+Launch isomaster and just copy the `txt.cfg` file to the root directory of the ISO and save to preseed.iso
