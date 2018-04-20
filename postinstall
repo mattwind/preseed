@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# grab our firstboot script
+/usr/bin/curl -o /etc/init.d/firstboot https://raw.githubusercontent.com/mattwind/preseed/master/firstboot
+
+# install the firstboot service
+chmod +x /etc/init.d/firstboot
+update-rc.d firstboot defaults

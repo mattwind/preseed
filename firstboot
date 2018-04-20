@@ -1,0 +1,47 @@
+#! /bin/sh
+### BEGIN INIT INFO
+# Provides:        firstboot
+# Required-Start:  $networking
+# Required-Stop:   $networking
+# Default-Start:   2 3 4 5
+# Default-Stop:    0 1 6
+# Short-Description: A script that runs once
+# Description: A script that runs once
+### END INIT INFO
+
+sleep 10
+
+### install docker
+/usr/bin/curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
+apt-get update
+apt-get install -y docker-ce
+
+# docker permissions
+group add docker
+groupadd docker
+gpasswd -a mwind docker
+
+### vim config
+cd /opt/
+git clone https://bitbucket.org/mattwind/vim.git
+
+# setup vim for root
+cd /opt/vim/
+/usr/bin/nohup ./setup.sh
+
+# setup vim for user
+su - mwind
+cd /opt/vim/
+/usr/bin/nohup ./setup.sh
+
+### sudo user
+/bin/bash -c 'echo "mwind ALL=(ALL) NOPASSWD: ALL" | (EDITOR="tee -a" visudo)'
+
+# Remove our firstboot service so that it won't run again
+update-rc.d firstboot remove
+
+sleep 5
+
+# Reboot into the updated system
+/sbin/reboot
