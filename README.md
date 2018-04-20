@@ -24,8 +24,8 @@ First download the Debian installation ISO.
 
 `wget http://ftp.debian.org/debian/dists/stable/main/installer-amd64/current/images/netboot/mini.iso`
 
-On linux the easiest way to edit the ISO by using isomaster.
+On linux the easiest way to edit an ISO is with isomaster.
 
 `apt install isomaster`
 
-Launch isomaster and just copy the `txt.cfg` file to the root directory of the ISO and save to preseed.iso
+Launch isomaster and open the mini.iso, copy the `txt.cfg` file from this project to the root directory of the ISO and lastly save as to your new preseed.iso
