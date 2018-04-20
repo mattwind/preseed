@@ -24,7 +24,7 @@ gpasswd -a mwind docker
 
 ### vim config
 cd /opt/
-git clone https://bitbucket.org/mattwind/vim.git
+git clone https://github.com/mattwind/vim.git
 
 # setup vim for root
 cd /opt/vim/
