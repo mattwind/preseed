@@ -6,19 +6,21 @@ Fully automatic unattended linux install can be used to speed up the process and
 
 `mkpasswd -m sha-512`
 
-### Post boot script
-
-This script will get executed after the installation.
+Change the hash in the preseed.cfg with the generated one
 
 ### Kernel boot parameter
 
 You can use any of the Debian mini or netboot iso images.
 
-Option 1) Hit tab on boot up and pass the following parameters.
+#### Option 1 
+
+Hit tab on boot up and pass the following parameters.
 
 `append auto preseed/url=https://raw.githubusercontent.com/mattwind/preseed/master/preseed.cfg keyboard-configuration/xkb-keymap=us priority=critical locale=en_US`
 
-Option 2) Modify the iso and edit the linux boot command.
+#### Option 2 
+
+Modify the iso and edit the linux boot command.
 
 On linux the easiest method is to install `isomaster`
 
