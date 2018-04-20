@@ -42,7 +42,7 @@ cd /opt/vim/
 update-rc.d firstboot remove
 
 # install KDE plasma
-aptitude install ~t^desktop$ ~t^kde-desktop$
+#aptitude install ~t^desktop$ ~t^kde-desktop$
 
 # Reboot into the updated system
 /sbin/reboot
