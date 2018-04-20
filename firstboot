@@ -18,12 +18,6 @@ snap install firefox
 snap install slack
 snap install skype
 
-### install docker
-#/usr/bin/curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
-#add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
-#apt-get update
-#apt-get install -y docker-ce
-
 # docker permissions
 group add docker
 groupadd docker
@@ -52,9 +46,6 @@ cd /opt/vim/
 
 # Remove our firstboot service so that it won't run again
 update-rc.d firstboot remove
-
-# install KDE plasma
-#aptitude install ~t^desktop$ ~t^kde-desktop$
 
 # Reboot into the updated system
 /sbin/reboot
