@@ -11,16 +11,28 @@
 
 sleep 10
 
+### install snaps
+snap install keepassxc
+snap install docker
+snap install firefox
+snap install slack
+snap install skype
+
 ### install docker
-/usr/bin/curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
-add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
-apt-get update
-apt-get install -y docker-ce
+#/usr/bin/curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+#add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
+#apt-get update
+#apt-get install -y docker-ce
 
 # docker permissions
 group add docker
 groupadd docker
 gpasswd -a mwind docker
+
+### synology
+cd /tmp
+wget 'https://global.download.synology.com/download/Tools/CloudStationDrive/4.2.6-4408/Ubuntu/Installer/x86_64/synology-cloud-station-drive-4408.x86_64.deb'
+dpkg -i synology-cloud-station-drive-4408.x86_64.deb
 
 ### vim config
 cd /opt/
