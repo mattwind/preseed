@@ -28,12 +28,12 @@ git clone https://github.com/mattwind/vim.git
 
 # setup vim for root
 cd /opt/vim/
-/usr/bin/nohup ./setup.sh
+/usr/bin/nohup /bin/bash setup.sh
 
 # setup vim for user
 su - mwind
 cd /opt/vim/
-/usr/bin/nohup ./setup.sh
+/usr/bin/nohup /bin/bash setup.sh
 
 ### sudo user
 /bin/bash -c 'echo "mwind ALL=(ALL) NOPASSWD: ALL" | (EDITOR="tee -a" visudo)'
