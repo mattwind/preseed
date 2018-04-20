@@ -16,7 +16,7 @@ You can use any of the Debian mini or netboot iso images.
 
 Option 1) Hit tab on boot up and pass the following parameters.
 
-`append auto preseed/url=https://bitbucket.org/mattwind/preseed/raw/master/canara.cfg keyboard-configuration/xkb-keymap=us priority=critical locale=en_US`
+`append auto preseed/url=https://raw.githubusercontent.com/mattwind/preseed/master/preseed.cfg keyboard-configuration/xkb-keymap=us priority=critical locale=en_US`
 
 Option 2) Modify the iso and edit the linux boot command.
 
